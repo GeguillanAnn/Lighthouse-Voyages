@@ -9,9 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="lv.css" />
   <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/hsGIw7iMo7s4uUIfAh03/media/6a024bffbc1f77cc35aeaeb8.png">
-
+  <link rel="stylesheet" href="lv.css" />
 </head>
 <body>
 
@@ -239,7 +238,10 @@
             <li>Bi-Weekly Accountability Calls (Recorded)</li>
             <li>Community Access</li>
           </ul>
-          <a href="https://www.skool.com/wayfinders/plans" target="_blank" rel="noopener" class="jigglypuff-price-cta">Join Standard</a>
+          <a href="#" class="jigglypuff-price-cta"
+            data-form-id="D3th67CNhtwM2JHXFASz"
+            data-form-title="Standard Tier Form"
+            data-modal-label="Join Standard — $97/mo">Join Standard</a>
         </div>
 
         <!-- Premium (featured) -->
@@ -256,7 +258,10 @@
             <li>Bi-Weekly Accountability Calls</li>
             <li>Community Access</li>
           </ul>
-          <a href="https://www.skool.com/wayfinders/plans" target="_blank" rel="noopener" class="jigglypuff-price-cta">Join Premium</a>
+          <a href="#" class="jigglypuff-price-cta"
+            data-form-id="TBceUzLFDWkjXHymzMPf"
+            data-form-title="Premium Tier Form"
+            data-modal-label="Join Premium — $777/yr">Join Premium</a>
         </div>
 
         <!-- VIP -->
@@ -272,7 +277,10 @@
             <li>Monthly 1-on-1 accountability</li>
             <li>VIP Inner Circle Access (Private Chat)</li>
           </ul>
-          <a href="https://www.skool.com/wayfinders/plans" target="_blank" rel="noopener" class="jigglypuff-price-cta">Join VIP</a>
+          <a href="#" class="jigglypuff-price-cta"
+            data-form-id="j5q7BpL8ve2ue8sOJCMP"
+            data-form-title="VIP Tier Form"
+            data-modal-label="Join VIP — $297/mo">Join VIP</a>
         </div>
       </div>
     </div>
@@ -338,7 +346,10 @@
       <div class="jigglypuff-faq-bottom">
         <h3>Still have questions?</h3>
         <p>Get in touch with the team and we will help you decide if Wayfinders is the right move.</p>
-        <a href="#" class="jigglypuff-btn">Get in touch</a>
+        <a href="#" class="jigglypuff-price-cta"
+            data-form-id="9uYvDtaB6fzRT3i7j03G"
+            data-form-title="Contact Us"
+            data-modal-label="Contact Us">Get in touch</a>
       </div>
     </div>
   </section>
@@ -377,34 +388,20 @@
   <div class="jigglypuff-modal-overlay" id="jigglypuff-modal-overlay" role="dialog" aria-modal="true" aria-label="Join Wayfinders">
     <div class="jigglypuff-modal">
       <div class="jigglypuff-modal-header">
-        <h3>Reserve Your Founding Seat</h3>
+        <h3 id="jigglypuff-modal-title">Reserve Your Founding Seat</h3>
         <button class="jigglypuff-modal-close" id="jigglypuff-modal-close" aria-label="Close">
           <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1l12 12M13 1L1 13" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
       </div>
-      <div class="jigglypuff-modal-body">
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/G0GpOQHupnVCNMP6K9pz"
-          id="inline-G0GpOQHupnVCNMP6K9pz"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Skool Community Form"
-          data-height="432"
-          data-layout-iframe-id="inline-G0GpOQHupnVCNMP6K9pz"
-          data-form-id="G0GpOQHupnVCNMP6K9pz"
-          title="Skool Community Form"
-        ></iframe>
-        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <div class="jigglypuff-modal-body" id="jigglypuff-modal-body">
+        <!-- iframe injected dynamically by JS -->
       </div>
     </div>
   </div>
+
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
   <script>
     // FAQ accordion
@@ -417,11 +414,44 @@
       });
     });
 
-    // Modal open/close
-    const overlay = document.getElementById('jigglypuff-modal-overlay');
-    const closeBtn = document.getElementById('jigglypuff-modal-close');
+    // Form configs per tier
+    const FORMS = {
+      general:  { id: 'G0GpOQHupnVCNMP6K9pz', title: 'Skool Community Form',  label: 'Reserve Your Founding Seat' },
+      standard: { id: 'D3th67CNhtwM2JHXFASz', title: 'Standard Tier Form',    label: 'Join Standard — $97/mo' },
+      premium:  { id: 'TBceUzLFDWkjXHymzMPf', title: 'Premium Tier Form',     label: 'Join Premium — $777/yr' },
+      vip:      { id: 'j5q7BpL8ve2ue8sOJCMP', title: 'VIP Tier Form',         label: 'Join VIP — $297/mo' },
+      contact:  { id: '9uYvDtaB6fzRT3i7j03G', title: 'Contact Us',            label: 'Contact Us'}
+    };
 
-    function openModal() {
+    const overlay    = document.getElementById('jigglypuff-modal-overlay');
+    const closeBtn   = document.getElementById('jigglypuff-modal-close');
+    const modalTitle = document.getElementById('jigglypuff-modal-title');
+    const modalBody  = document.getElementById('jigglypuff-modal-body');
+
+    function openModal(form) {
+      // Set header title
+      modalTitle.textContent = form.label;
+
+      // Inject a fresh iframe so the form always loads clean
+      modalBody.innerHTML = `
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/${form.id}"
+          id="inline-${form.id}"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="${form.title}"
+          data-height="432"
+          data-layout-iframe-id="inline-${form.id}"
+          data-form-id="${form.id}"
+          title="${form.title}"
+          style="width:100%;height:100%;border:none;border-radius:12px"
+        ></iframe>`;
+
       overlay.classList.add('jigglypuff-open');
       document.body.style.overflow = 'hidden';
     }
@@ -429,15 +459,25 @@
     function closeModal() {
       overlay.classList.remove('jigglypuff-open');
       document.body.style.overflow = '';
+      // Clear iframe on close so it resets next time
+      setTimeout(() => { modalBody.innerHTML = ''; }, 300);
     }
 
-    // Wire up all CTA buttons
-    document.querySelectorAll(
-      '.jigglypuff-btn, .jigglypuff-nav-cta, .jigglypuff-price-cta'
-    ).forEach((btn) => {
+    // Pricing buttons — each gets its own form
+    document.querySelectorAll('.jigglypuff-price-cta').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        openModal();
+        const formId = btn.dataset.formId;
+        const match  = Object.values(FORMS).find(f => f.id === formId) || FORMS.general;
+        openModal(match);
+      });
+    });
+
+    // All other CTA buttons — use general form
+    document.querySelectorAll('.jigglypuff-btn, .jigglypuff-nav-cta').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(FORMS.general);
       });
     });
 
