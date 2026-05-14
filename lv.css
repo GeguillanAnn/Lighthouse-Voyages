@@ -822,6 +822,7 @@ section { padding: 40px 0; }
 }
 .jigglypuff-modal-body {
   padding: 24px 28px 28px;
+  overflow: auto;
   height: fit-content;
 }
 .jigglypuff-modal-body iframe {
