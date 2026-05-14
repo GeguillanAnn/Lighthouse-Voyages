@@ -34,6 +34,70 @@
     <div class="jigglypuff-wrap">
       <span class="jigglypuff-eyebrow">Founding Member Pricing — Limited</span>
       <h1>Stop being the bottleneck in <span class="jigglypuff-accent">your business.</span></h1>
+          <div class="video-wrap" id="videoWrap" role="button" tabindex="0" aria-label="Play video">
+        <div class="video-frame">
+          <!-- Background scene SVG (subtle stylized lighthouse / coastline) -->
+          <svg class="video-bg-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="vbgGrad" cx="50%" cy="55%" r="55%">
+                <stop offset="0%" stop-color="#ff8700" stop-opacity="0.4"/>
+                <stop offset="50%" stop-color="#ff8700" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#ff8700" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0f0a08"/>
+                <stop offset="100%" stop-color="#1a0f06"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="500" fill="url(#oceanGrad)"/>
+            <ellipse cx="400" cy="280" rx="500" ry="300" fill="url(#vbgGrad)"/>
+            <!-- Distant horizon line -->
+            <line x1="0" y1="340" x2="800" y2="340" stroke="rgba(255,135,0,0.15)" stroke-width="1"/>
+            <!-- Light beams from distant lighthouse -->
+            <g opacity="0.2" stroke="#ff8700" stroke-width="0.8">
+              <line x1="600" y1="280" x2="200" y2="180"/>
+              <line x1="600" y1="280" x2="120" y2="320"/>
+              <line x1="600" y1="280" x2="780" y2="180"/>
+            </g>
+            <!-- Far lighthouse silhouette -->
+            <g transform="translate(594 230)" opacity="0.8">
+              <rect x="-3" y="0" width="6" height="50" fill="#0a0604"/>
+              <rect x="-6" y="-4" width="12" height="6" fill="#ff8700" opacity="0.85"/>
+              <rect x="-8" y="50" width="16" height="6" fill="#0a0604"/>
+            </g>
+            <!-- Wave lines -->
+            <g stroke="rgba(255,135,0,0.12)" stroke-width="0.6" fill="none">
+              <path d="M0 380 Q200 374 400 380 T800 380"/>
+              <path d="M0 410 Q200 404 400 410 T800 410"/>
+              <path d="M0 440 Q200 434 400 440 T800 440"/>
+            </g>
+          </svg>
+
+          <!-- LIVE indicator -->
+          <div class="video-live">
+            <span class="pulse"></span>
+            <span>NOW PLAYING</span>
+          </div>
+
+          <!-- Centered overlay -->
+          <div class="video-overlay">
+            <div class="speaker-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+                <path d="M15.5 8.5a5 5 0 010 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M18.5 5.5a9 9 0 010 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="video-overlay-text">
+              <span>Your Video Is Playing</span>
+              <span>Click To Unmute</span>
+            </div>
+          </div>
+
+          <!-- Subtitle / caption bar -->
+          <div class="video-caption">And I'll explain how each of those help you</div>
+        </div>
+      </div>
       <p class="jigglypuff-hero-sub">
         Join the LV Wayfinders operator community. Get the roadmap, capital, and systems you need to build a business that runs without you.
       </p>
